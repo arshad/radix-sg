@@ -1,0 +1,7 @@
+{
+  "title": "STLC Styleguide",
+  "description": "Styleguide for the STLC Drupal theme.",
+  "componentsPath": "../assets/sass/components/**/*.md",
+  "stylesheetPath": "/sites/all/themes/stlc_2015/assets/stylesheets/screen.css"
+}
+

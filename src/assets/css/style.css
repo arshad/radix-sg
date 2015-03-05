@@ -1,0 +1,90 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.styleguide--container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.styleguide--sidebar {
+  font-size: 12px;
+  top: 50px;
+  position: fixed;
+}
+.styleguide--sidebar #logo {
+  margin-bottom: 30px;
+}
+.styleguide--sidebar h4 {
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.styleguide--sidebar ul {
+  padding: 0;
+  margin: 0;
+}
+.styleguide--sidebar ul li {
+  list-style: none outside none;
+  margin: 0 0 3px;
+}
+.styleguide--sidebar ul li a {
+  color: black;
+}
+.styleguide--sidebar ul li a:hover,
+.styleguide--sidebar ul li a:active {
+  color: #f55e00;
+}
+
+.styleguide--content {
+}
+
+.styleguide--component {
+  border: 1px solid rgba(0,0,0,0.10);
+  margin-top: 40px;
+  margin-bottom: 300px;
+  padding: 20px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+.styleguide--component > h1 {
+  font-size: 16px;
+  margin: 20px -20px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 20px;
+}
+.styleguide--component > h1:first-child {
+  margin-top: -20px;
+  border-top: 0;
+}
+.styleguide--component > h4 {
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.30);
+}
+hr {
+  margin-left: -20px;
+  margin-right: -20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+code, pre {
+  background: rgba(0,0,0,0.025);
+  font-size: 12px;
+  line-height: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 0;
+}
+
+.color-palette {
+  overflow: hidden;
+}
+.color-palette .color-palette--item {
+  float: left;
+  margin: 0 10px 10px 0;
+  width: 80px;
+  height: 80px;
+}
