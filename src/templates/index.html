@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="styleguide">
-    <div class="styleguide__container row">
-        <main class="styleguide__content col-md-18">
+    <div class="styleguide--container row">
+        <main class="styleguide--content col-md-18">
             {% for component in styleguide.components %}
-                <div class="styleguide__component">
+                <div class="styleguide--component">
                     {{ component.content|safe }}
                 </div>
             {% endfor %}
         </main>
-        <aside class="styleguide__sidebar col-md-4 col-offset-md-2">
+        <aside class="styleguide--sidebar col-md-4 col-offset-md-2">
             <a href="#" id="logo"><img src="http://schoolturnaroundsupport.org/sites/all/themes/c3_stlc/logo.png" width="250px" /></a>
             <h4>Components</h4>
             <ul>

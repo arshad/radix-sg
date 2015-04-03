@@ -3,45 +3,45 @@ body {
   margin: 0;
 }
 
-.styleguide__container {
+.styleguide--container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.styleguide__sidebar {
+.styleguide--sidebar {
   font-size: 12px;
+  right: 100px;
   top: 50px;
   position: fixed;
-  right: 50px;
 }
-.styleguide__sidebar #logo {
+.styleguide--sidebar #logo {
   margin-bottom: 30px;
 }
-.styleguide__sidebar h4 {
+.styleguide--sidebar h4 {
   font-size: 14px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.styleguide__sidebar ul {
+.styleguide--sidebar ul {
   padding: 0;
   margin: 0;
 }
-.styleguide__sidebar ul li {
+.styleguide--sidebar ul li {
   list-style: none outside none;
   margin: 0 0 3px;
 }
-.styleguide__sidebar ul li a {
+.styleguide--sidebar ul li a {
   color: black;
 }
-.styleguide__sidebar ul li a:hover,
-.styleguide__sidebar ul li a:active {
+.styleguide--sidebar ul li a:hover,
+.styleguide--sidebar ul li a:active {
   color: #f55e00;
 }
 
-.styleguide__content {
+.styleguide--content {
 }
 
-.styleguide__component {
+.styleguide--component {
   border: 1px solid rgba(0,0,0,0.10);
   margin-top: 40px;
   margin-bottom: 300px;
@@ -50,14 +50,14 @@ body {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
 }
-.styleguide__component > h1 {
+.styleguide--component > h1 {
   font-size: 16px;
   margin: 20px -20px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.10);
   border-top: 1px solid rgba(0, 0, 0, 0.10);
   padding: 20px;
 }
-.styleguide__component > h1:first-child {
+.styleguide--component > h1:first-child {
   margin-top: -20px;
   border-top: 0;
 }
@@ -83,7 +83,7 @@ code, pre {
 .color-palette {
   overflow: hidden;
 }
-.color-palette .color-palette--item {
+.color-palette .color-palette__item {
   float: left;
   margin: 0 10px 10px 0;
   width: 80px;

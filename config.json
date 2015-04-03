@@ -2,6 +2,6 @@
   "title": "STLC Styleguide",
   "description": "Styleguide for the STLC Drupal theme.",
   "componentsPath": "../assets/sass/components/**/*.md",
-  "stylesheetPath": "/sites/all/themes/stlc_2015/assets/stylesheets/screen.css"
+  "stylesheetPath": "http://192.168.56.130/sites/all/themes/stlc_2015/assets/stylesheets/screen.css"
 }
 
