@@ -2,29 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{{ styleguide.title }} | {{ styleguide.description }}</title>
-    <link rel="stylesheet" href="{{ styleguide.stylesheetPath }}">
+    <title>{{ title }} | {{ description }}</title>
+    <link rel="stylesheet" href="{{ stylesheet }}">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="styleguide">
-    <div class="styleguide--container row">
-        <main class="styleguide--content col-md-18">
-            {% for component in styleguide.components %}
-                <div class="styleguide--component">
-                    {{ component.content|safe }}
-                </div>
+    <div class="styleguide__container row">
+        <main class="styleguide__content col-md-18">
+            {% for section in sections %}
+                <h1 id="{{ section.name }}">{{ section.title }}</h1>
+                {% for file in section.files %}
+                    <div class="styleguide__component">
+                        {{ file.content|safe }}
+                    </div>
+                {% endfor %}
             {% endfor %}
         </main>
-        <aside class="styleguide--sidebar col-md-4 col-offset-md-2">
-            <a href="#" id="logo"><img src="http://schoolturnaroundsupport.org/sites/all/themes/c3_stlc/logo.png" width="250px" /></a>
-            <h4>Components</h4>
-            <ul>
-                {% for component in styleguide.components %}
-                <li>
-                    <a href="#{{component.name}}">{{component.title}}</a>
-                </li>
-                {% endfor %}
-            </ul>
+        <aside class="styleguide__sidebar col-md-4 col-offset-md-2">
+            {% for section in sections %}
+                <h4 class="panel-title">{{ section.title }}</h4>
+                <ul>
+                    {% for file in section.files %}
+                        <li>
+                            <a href="#{{file.attributes.name}}">{{file.attributes.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
         </aside>
     </div>
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>

@@ -1,0 +1,45 @@
+{
+  "title": "STLC Styleguide",
+  "description": "Styleguide for the STLC Drupal theme.",
+  "stylesheet": "/sites/all/themes/stlc_2015/assets/stylesheets/screen.css",
+  "sections": [
+    {
+      "title": "Getting Started",
+      "tree": [
+        "getting_started"
+      ]
+    },
+    {
+      "title" : "CSS",
+      "tree": [
+        "css/colors",
+        "css/helpers",
+        "css/typography",
+        "css/icons"
+      ]
+    },
+    {
+      "title" : "Components",
+      "tree": [
+        "components/buttons",
+        "components/alerts",
+        "components/form",
+        "components/comments",
+        "components/navs",
+        "components/labels",
+        "components/panes",
+        "components/users"
+      ]
+    },
+    {
+      "title" : "Content",
+      "tree": [
+        "content/slide",
+        "content/blog",
+        "content/resource",
+        "content/collection"
+      ]
+    }
+  ]
+}
+
