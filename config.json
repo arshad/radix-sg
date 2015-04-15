@@ -1,6 +1,6 @@
 {
-  "title": "STLC Styleguide",
-  "description": "Styleguide for the STLC Drupal theme.",
+  "title": "Radix Styleguide",
+  "description": "Styleguide for the Radix Drupal theme.",
   "componentsPath": "./src/components/**/*.md",
   "stylesheetPath": "http://example.com/path/to/assets/stylesheets/screen.css"
 }
