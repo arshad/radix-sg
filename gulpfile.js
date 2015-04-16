@@ -1,8 +1,5 @@
 // Load node modules.
 var fs = require('fs');
-var through = require('through2');
-var path = require('path');
-//var swig = require('swig');
 var marked = require('marked');
 var del = require('del');
 var frontMatter = require('front-matter');
@@ -14,7 +11,6 @@ var rename = require("gulp-rename");
 var clean = require('gulp-clean');
 var gutil = require('gulp-util');
 var sync = require('gulp-sync')(gulp);
-//var frontMatter = require('gulp-front-matter');
 var data = require('gulp-data');
 var webserver = require('gulp-webserver');
 var swig = require('gulp-swig');
