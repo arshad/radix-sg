@@ -1,5 +1,5 @@
-# radix-sg
-A styleguide generator for Radix theme
+# Radix Styleguide Builder
+A styleguide builder for the Radix theme.
 
 ## Installation
 
