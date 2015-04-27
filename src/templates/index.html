@@ -1,39 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>{{ title }} | {{ description }}</title>
+  <meta charset="utf-8">
+  <title>{{ title }} | {{ description }}</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./assets/stylesheets/style.css">
-    <link rel="stylesheet" href="{{ stylesheet }}">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/stylesheets/style.css">
+  <link rel="stylesheet" href="{{ stylesheet }}">
 </head>
 <body>
     <div class="styleguide container">
-        <div class="styleguide__container row">
-            <aside class="styleguide__sidebar col-md-2">
-                {% for section in sections %}
-                <h4 class="panel-title">{{ section.title }}</h4>
-                <ul>
-                    {% for file in section.files %}
-                    <li>
-                        <a href="#{{file.attributes.name}}">{{file.attributes.title }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endfor %}
-            </aside>
-            <main class="styleguide__content col-md-10">
-                {% for section in sections %}
-                <h1 id="{{ section.name }}">{{ section.title }}</h1>
-                {% for file in section.files %}
-                <div class="styleguide__component">
-                    {{ file.content|safe }}
-                </div>
-                {% endfor %}
-                {% endfor %}
-            </main>
+      <aside class="styleguide__sidebar">
+        {% for section in sections %}
+        <h4 class="panel-title">{{ section.title }}</h4>
+        <ul>
+          {% for file in section.files %}
+          <li>
+              <a href="#{{file.attributes.name}}">{{file.attributes.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+      </aside>
+      <main class="styleguide__content">
+        {% for section in sections %}
+        <h1 id="{{ section.name }}">{{ section.title }}</h1>
+        {% for file in section.files %}
+        <div class="styleguide__component">
+            {{ file.content|safe }}
         </div>
+        {% endfor %}
+        {% endfor %}
+      </main>
     </div>
 
     <!-- Javascripts -->
