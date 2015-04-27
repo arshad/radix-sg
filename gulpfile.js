@@ -18,7 +18,7 @@ var swig = require('gulp-swig');
 // Load config file.
 var styleguide = require('./styleguide');
 
-gulp.task('clean', require('del').bind(null, ['.tmp', 'public']));
+//gulp.task('clean', require('del').bind(null, ['.tmp', 'public']));
 
 // Gulp 'assets' tasks: copy the assets dir to public.
 gulp.task('assets', function() {
@@ -35,6 +35,13 @@ gulp.task('build', function() {
     .pipe(gulp.dest('public'));
 });
 
+// Gulp 'watch' task.
+gulp.task('watch', function () {
+  gulp.watch(['src/assets/**/*'], ['assets']);
+  gulp.watch(['src/styleguide/**/*'], ['build']);
+  gulp.watch(['src/templates/**/*'], ['build']);
+});
+
 // Gulp 'webserver' task: setups the webserver and enable livereload.
 gulp.task('webserver', function() {
   gulp.src('public')
@@ -43,11 +50,6 @@ gulp.task('webserver', function() {
       open: true,
       port: 9000
     }));
-});
-
-// Gulp 'watch' task
-gulp.task('watch', function () {
-  gulp.watch(['src/**/*'], ['assets', 'build']);
 });
 
 // Gulp 'default' task.
