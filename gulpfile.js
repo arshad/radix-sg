@@ -18,13 +18,6 @@ var swig = require('gulp-swig');
 // Load config file.
 var styleguide = require('./styleguide');
 
-// Gulp 'clean' task : Clean the public dir.
-//gulp.task('clean', function() {
-//  del(['public/**/*']);
-//  //return gulp.src('public/**/*', { read: false })
-//  //  .pipe(clean(clean({force: true})));
-//});
-
 gulp.task('clean', require('del').bind(null, ['.tmp', 'public']));
 
 // Gulp 'assets' tasks: copy the assets dir to public.
@@ -32,7 +25,8 @@ gulp.task('assets', function() {
   return gulp.src('./src/assets/**/*').pipe(gulp.dest('./public'));
 });
 
-gulp.task('build:index', function() {
+// Gulp 'build' task.
+gulp.task('build', function() {
   gulp.src('./src/templates/index.html')
     .pipe(data(function() {
       return buildSections();
@@ -53,14 +47,11 @@ gulp.task('webserver', function() {
 
 // Gulp 'watch' task
 gulp.task('watch', function () {
-  //gulp.watch(['src/assets/**/*'], ['assets']);
-  //gulp.watch(['src/styleguide/**/*'], ['build:index']);
-  //gulp.watch(['src/templates/**/*'], ['build:index']);
-  gulp.watch(['src/**/*'], ['assets', 'build:index']);
+  gulp.watch(['src/**/*'], ['assets', 'build']);
 });
 
 // Gulp 'default' task.
-gulp.task('default', ['assets', 'build:index', 'webserver', 'watch']);
+gulp.task('default', ['assets', 'build', 'webserver', 'watch']);
 
 function buildSections() {
   var sections = [];
