@@ -7,23 +7,16 @@ var frontMatter = require('front-matter');
 // Load Gulp plugins.
 var gulp = require('gulp');
 var markdown = require('gulp-markdown');
-var rename = require("gulp-rename");
-var clean = require('gulp-clean');
 var gutil = require('gulp-util');
-var sync = require('gulp-sync')(gulp);
 var data = require('gulp-data');
 var webserver = require('gulp-webserver');
 var swig = require('gulp-swig');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 // Load config file.
 var styleguide = require('./styleguide');
-
-//gulp.task('clean', require('del').bind(null, ['.tmp', 'public']));
-
-// Gulp 'assets' tasks: copy the assets dir to public.
-gulp.task('assets', function() {
-  return gulp.src('./src/assets/**/*').pipe(gulp.dest('./public'));
-});
 
 // Gulp 'build' task.
 gulp.task('build', function() {
@@ -35,12 +28,22 @@ gulp.task('build', function() {
     .pipe(gulp.dest('public'));
 });
 
-// Gulp 'watch' task.
-gulp.task('watch', function () {
-  gulp.watch(['src/assets/**/*'], ['assets']);
-  gulp.watch(['src/styleguide/**/*'], ['build']);
-  gulp.watch(['src/templates/**/*'], ['build']);
+// Gulp 'sass' task
+gulp.task('sass', function() {
+  return gulp.src('./src/assets/sass/**/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('public/assets/stylesheets'));
 });
+
+gulp.task('js', function(){
+  return gulp.src('./src/assets/javascripts/**/*.js')
+    .pipe(uglify())
+    .pipe(concat('script.min.js'))
+    .pipe(gulp.dest('public/assets/javascripts'));
+});
+
+// Gulp 'assets' task
+gulp.task('assets', ['sass', 'js']);
 
 // Gulp 'webserver' task: setups the webserver and enable livereload.
 gulp.task('webserver', function() {
@@ -52,9 +55,17 @@ gulp.task('webserver', function() {
     }));
 });
 
+// Gulp 'watch' task.
+gulp.task('watch', function () {
+  gulp.watch(['src/assets/**/*'], ['assets']);
+  gulp.watch(['src/styleguide/**/*'], ['build']);
+  gulp.watch(['src/templates/**/*'], ['build']);
+});
+
 // Gulp 'default' task.
 gulp.task('default', ['assets', 'build', 'webserver', 'watch']);
 
+// Build sections.
 function buildSections() {
   var sections = [];
   styleguide.sections.map(function(section) {

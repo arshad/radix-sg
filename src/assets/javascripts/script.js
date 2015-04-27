@@ -1,2 +1,3 @@
 (function ($) {
+  // Code here.
 })(jQuery)

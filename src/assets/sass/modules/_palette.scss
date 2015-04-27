@@ -1,0 +1,13 @@
+// Color Paletter
+//------------------------------------------------------------------------------
+.color-palette {
+  overflow: hidden;
+  .color-palette__item {
+    margin: 0 3px 3px 0;
+    float: left;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    line-height: 130px;
+  }
+}

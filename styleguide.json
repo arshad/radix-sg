@@ -1,7 +1,7 @@
 {
-  "title": "STLC Styleguide",
-  "description": "Styleguide for the STLC Drupal theme.",
-  "stylesheet": "/sites/all/themes/stlc_2015/assets/stylesheets/screen.css",
+  "title": "Radix Styleguide",
+  "description": "Styleguide for the Radix theme.",
+  "stylesheet": "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css",
   "sections": [
     {
       "title": "Getting Started",
