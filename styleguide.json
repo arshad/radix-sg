@@ -2,6 +2,7 @@
   "title": "Radix Styleguide",
   "description": "Styleguide for the Radix theme.",
   "stylesheet": "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css",
+  "script": "/path/to/theme/assets/javascripts/script.js",
   "sections": [
     {
       "title": "Getting Started",
