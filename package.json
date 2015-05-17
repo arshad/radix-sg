@@ -1,6 +1,6 @@
 {
   "name": "styleguide",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Styleguide generator for Radix themes",
   "main": "index.js",
   "scripts": {
